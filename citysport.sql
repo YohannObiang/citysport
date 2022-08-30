@@ -3,6 +3,8 @@ CREATE DATABASE citysport;
 USE citysport
 
 CREATE USER 'yohann'@'localhost' IDENTIFIED BY 'yohannobiang';
+GRANT ALL PRIVILEGES ON citysport. * TO 'yohann'@'localhost';
+
 
 SELECT User, Host FROM mysql.user;
 
