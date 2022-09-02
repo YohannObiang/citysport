@@ -51,7 +51,7 @@ app.get('/api/get/:id', (req, res)=>{
     })
 })
 
-// Attributs de chaque chaussures a lister
+// Attributs de chaque chaussures
 app.post('/api/post', (req, res)=>{
     const idMarque = req.body.idMarque;
     const taille = req.body.taille;
@@ -59,29 +59,30 @@ app.post('/api/post', (req, res)=>{
     const prix = req.body.prix;
     const modele = req.body.modele;
 
-    
+// Ajout des modeles de chaussures   
+   
     con.query('INSERT INTO chaussures VALUES(NULL,?,?,?,?,?)',[idMarque,taille,couleur,prix,modele],(err,result)=>{
         if(err)
     {
         console.log(err)
     }else{
-        res.send('POSTED');
+        res.send('Modele de chaussure ajoute');
     }
     })
 })
 
-// Attributs de chaque marques a lister
+// Attributs de chaque marques
 app.post('/api/marques/post', (req, res)=>{
     const marque = req.body.marque;
     const logo = req.body.logo;
 
-    
+// Ajout des marques de chaussures   
     con.query('INSERT INTO marques VALUES(NULL,?,?)',[marque,logo],(err,result)=>{
         if(err)
     {
         console.log(err)
     }else{
-        res.send('POSTED');
+        res.send('Marque ajoutee');
     }
     })
 })
