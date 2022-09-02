@@ -32,7 +32,7 @@ app.get('/', (req, res)=>{
 
 // Lister les differents modeles Chaussures
 
-app.get('/api/get', (req, res)=>{
+app.get('/api/modeles', (req, res)=>{
     
     con.query('SELECT * FROM chaussures',(err,result)=>{
         if(err) res.status(500).send(err)
@@ -42,7 +42,7 @@ app.get('/api/get', (req, res)=>{
 })
 
 // Lister les differentes marques de chaussures
-app.get('/api/get/:id', (req, res)=>{
+app.get('/api/get/modeles/:id', (req, res)=>{
     
     con.query('SELECT * FROM chaussures WHERE idChaussure=?',[req.params.idChaussure],(err,result)=>{
         if(err) res.status(500).send(err)
@@ -52,7 +52,7 @@ app.get('/api/get/:id', (req, res)=>{
 })
 
 // Attributs de chaque chaussures
-app.post('/api/post', (req, res)=>{
+app.post('/api/chaussures', (req, res)=>{
     const idMarque = req.body.idMarque;
     const taille = req.body.taille;
     const couleur = req.body.couleur;
@@ -72,7 +72,7 @@ app.post('/api/post', (req, res)=>{
 })
 
 // Attributs de chaque marques
-app.post('/api/marques/post', (req, res)=>{
+app.post('/api/marques', (req, res)=>{
     const marque = req.body.marque;
     const logo = req.body.logo;
 
