@@ -42,7 +42,7 @@ app.get('/api/chaussures', (req, res)=>{
 })
 
 // Lister les differentes marques de chaussures
-app.get('/api/chaussures:id', (req, res)=>{
+app.get('/api/chaussures/:id', (req, res)=>{
     
     con.query('SELECT * FROM chaussures WHERE idChaussure=?',[req.params.idChaussure],(err,result)=>{
         if(err) res.status(500).send(err)
