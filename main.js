@@ -32,7 +32,7 @@ app.get('/', (req, res)=>{
 
 // Lister les differents modeles Chaussures
 
-app.get('/api/modeles', (req, res)=>{
+app.get('/api/chaussures', (req, res)=>{
     
     con.query('SELECT * FROM chaussures',(err,result)=>{
         if(err) res.status(500).send(err)
@@ -42,7 +42,7 @@ app.get('/api/modeles', (req, res)=>{
 })
 
 // Lister les differentes marques de chaussures
-app.get('/api/get/modeles/:id', (req, res)=>{
+app.get('/api/chaussures:id', (req, res)=>{
     
     con.query('SELECT * FROM chaussures WHERE idChaussure=?',[req.params.idChaussure],(err,result)=>{
         if(err) res.status(500).send(err)
