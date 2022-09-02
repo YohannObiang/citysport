@@ -86,13 +86,12 @@ app.post('/api/marques/post', (req, res)=>{
     }
     })
 })
-
-
+// Definition du port a ecouter
 app.listen(3000, (err)=>{
     if(err)
     {
         console.log(err)
     }else{
-        console.log('on port 3000');
+        console.log('Sur le port 3000');
     }
 })
