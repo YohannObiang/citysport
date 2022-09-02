@@ -52,7 +52,7 @@ app.get('/api/chaussures/:id', (req, res)=>{
 })
 
 // Attributs de chaque chaussures
-app.post('/api/chaussures', (req, res)=>{
+app.post('/api/chaussure', (req, res)=>{
     const idMarque = req.body.idMarque;
     const taille = req.body.taille;
     const couleur = req.body.couleur;
@@ -72,7 +72,7 @@ app.post('/api/chaussures', (req, res)=>{
 })
 
 // Attributs de chaque marques
-app.post('/api/marques', (req, res)=>{
+app.post('/api/marque', (req, res)=>{
     const marque = req.body.marque;
     const logo = req.body.logo;
 
